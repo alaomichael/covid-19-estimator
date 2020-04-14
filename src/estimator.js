@@ -1,10 +1,7 @@
 const covid19ImpactEstimator = (data) => {
   const {
     region: {
-      name,
-      avgAge,
-      avgDailyIncomeInUsd,
-      avgIncomePopulation
+      avgDailyIncomeInUsd
     },
     reportedCases,
     timeToElapse,
