@@ -1,6 +1,11 @@
 const covid19ImpactEstimator = (data) => {
   const {
-    region: { avgDailyIncomeInUsd },
+    region: {
+      name,
+      avgAge,
+      avgDailyIncomeInUsd,
+      avgIncomePopulation
+    },
     reportedCases,
     timeToElapse,
     periodType,
@@ -40,11 +45,11 @@ const covid19ImpactEstimator = (data) => {
     default:
   }
 
-  // To estimate the number of infected people 28 days from now, as currently infected people doubles every 3 days i.e 2 to the power of 9
+  // To estimate the number of infected people 28 days from now
   impact.infectionsByRequestedTime = impact.currentlyInfected * (2 ** timeFactor);
 
 
-  // To estimate the number of infected people 28 days from now, as currently infected people doubles every 3 days i.e 2 to the power of 9
+  // To estimate the number of infected people 28 days from now
   severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (2 ** timeFactor);
 
   // Challenge 2
